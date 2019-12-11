@@ -42,7 +42,26 @@ describe("Thermostat", function() {
       let thermostat = new Thermostat(25)
       expect(function(){
         thermostat.up();
-      }).toThrowError('Temperature already at maximum')
+      }).toThrowError('Temperature already at maximum');
+    });
+  });
+
+  describe('power saver mode off', function(){
+
+    it('can go above 25', function(){
+      let thermostat = new Thermostat(25);
+      thermostat.powerSaverSwitch();
+      expect(function(){
+        thermostat.up();
+      }).not.toThrowError
+    });
+
+    it('has a maximum temperature of 32', function(){
+      let thermostat = new Thermostat(32)
+      thermostat.powerSaverSwitch();
+      expect(function(){
+        thermostat.up();
+      }).toThrowError('Temperature already at maximum');
     });
   });
 });
