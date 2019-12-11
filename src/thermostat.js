@@ -3,11 +3,7 @@ const MIN_TEMP =10
 
 function Thermostat() {
   this.temperature = 20;
-};
-
-Thermostat.prototype.currentTemp= function(){
-  return this.temperature
-
+  this.powerSaverMode = true
 };
 
 Thermostat.prototype.up = function(){

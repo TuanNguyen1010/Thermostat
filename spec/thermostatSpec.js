@@ -7,12 +7,12 @@ describe("Thermostat", function() {
   });
 
   it("starts at 20 degrees", function() {
-    expect(thermostat.currentTemp()).toEqual(20);
+    expect(thermostat.temperature).toEqual(20);
 
   });
 
   it('has a minimum temperature set at 10', function(){
-    do { thermostat.down()} while (thermostat.currentTemp() > 10);
+    do { thermostat.down()} while (thermostat.temperature > 10);
   
     expect(function() {
       thermostat.down();
@@ -22,14 +22,20 @@ describe("Thermostat", function() {
   describe('up', function (){
     it("increase the temperature by 1", function(){
     thermostat.up()
-    expect(thermostat.currentTemp()).toEqual(21);
+    expect(thermostat.temperature).toEqual(21);
     });
   });
 
   describe('down', function() {
     it('decrease the temperature by 1', function(){
       thermostat.down()
-      expect(thermostat.currentTemp()).toEqual(19);
+      expect(thermostat.temperature).toEqual(19);
+    });
+  });
+
+  describe('in power saver mode', function(){
+    it('default setting is on power saver mode ', function(){
+      expect(thermostat.powerSaverMode).toEqual(true);
     });
   });
 });
