@@ -8,7 +8,7 @@ function Thermostat(temperature = 20) {
 
 Thermostat.prototype.up = function(){
   if (this.temperature >= this.maxTemp()) throw new Error('Temperature already at maximum')
-  this.temperature += 1
+  this.temperature ++
 };
 
 Thermostat.prototype.down = function(){
@@ -23,4 +23,8 @@ Thermostat.prototype.maxTemp = function(){
 
 Thermostat.prototype.powerSaverSwitch = function(){
  this.powerSaverMode = !this.powerSaverMode
+};
+
+Thermostat.prototype.reset = function(){
+  this.temperature = 20
 };

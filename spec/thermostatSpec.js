@@ -64,4 +64,11 @@ describe("Thermostat", function() {
       }).toThrowError('Temperature already at maximum');
     });
   });
+
+  it('can reset the temperature to 20', function(){
+    thermostat.up()
+    expect(thermostat.temperature).not.toEqual(20)
+    thermostat.reset()
+    expect(thermostat.temperature).toEqual(20)
+  });
 });
