@@ -12,7 +12,7 @@ describe("Thermostat", function() {
   });
 
   it('has a minimum temperature set at 10', function(){
-    do { thermostat.down()} while (thermostat.temperature > 10);
+    let thermostat = new Thermostat(10)
   
     expect(function() {
       thermostat.down();
@@ -36,6 +36,13 @@ describe("Thermostat", function() {
   describe('in power saver mode', function(){
     it('default setting is on power saver mode ', function(){
       expect(thermostat.powerSaverMode).toEqual(true);
+    });
+    
+    it('has a maximum temperature of 25', function(){
+      let thermostat = new Thermostat(25)
+      expect(function(){
+        thermostat.up();
+      }).toThrowError('Temperature already at maximum')
     });
   });
 });
