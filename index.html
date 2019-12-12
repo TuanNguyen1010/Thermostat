@@ -7,7 +7,7 @@
 
 
 <body>
-        <h1 id="Thermostat">20</h1>
+        <h1 id="Thermostat"></h1>
     <section> 
         <p>
             <button id="up">+</button><br>
@@ -21,10 +21,12 @@
     <script src="src/thermostat.js"></script>
     <script>
     $( document ).ready(function() {
- 
-        $( "button" ).click(function( event ) {
+        var thermostat = new Thermostat();
+        $( '#Thermostat').text(thermostat.temperature);
+        $( "#up" ).click(function( event ) {
 
-            alert( "Thanks for visiting!" );
+            thermostat.up();
+            $( '#Thermostat').text(thermostat.temperature);
 
          });
 
