@@ -1,3 +1,5 @@
+'use strict';
+
 describe("Thermostat", function() {
 
   var thermostat
@@ -70,5 +72,22 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).not.toEqual(20)
     thermostat.reset()
     expect(thermostat.temperature).toEqual(20)
+  });
+
+  describe('#usage', function(){
+    it('shows low usuage', function(){
+      let thermostat = new Thermostat(17)
+      expect(thermostat.usage()).toEqual('low-usage')
+    });
+
+    it('shows medium usuage', function(){
+      let thermostat = new Thermostat(24)
+      expect(thermostat.usage()).toEqual('medium-usage')
+    });
+
+    it('shows high usuage', function(){
+      let thermostat = new Thermostat(25)
+      expect(thermostat.usage()).toEqual('high-usage')
+    });
   });
 });

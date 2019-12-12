@@ -1,5 +1,6 @@
-const MIN_TEMP =10
+'use strict';
 
+const MIN_TEMP =10
 
 function Thermostat(temperature = 20) {
   this.temperature = temperature;
@@ -27,4 +28,14 @@ Thermostat.prototype.powerSaverSwitch = function(){
 
 Thermostat.prototype.reset = function(){
   this.temperature = 20
+};
+
+Thermostat.prototype.usage = function(){
+  if (this.temperature < 18) {
+    return 'low-usage'
+  }
+  else if (this.temperature < 25) {
+    return 'medium-usage'
+  }
+  return 'high-usage'
 };
