@@ -3,6 +3,8 @@ $( document ).ready(function() {
 
   $( '#Thermostat').text(thermostat.temperature);
 
+  $( '#power-saving-status').text(thermostat.powerSaverStatus());
+
   $( "#up" ).click(function( event ) {
 
       thermostat.up();
@@ -14,6 +16,27 @@ $( document ).ready(function() {
 
     thermostat.down();
     $( '#Thermostat').text(thermostat.temperature);
+
+  });
+
+  $( "#reset" ).click(function( event ) {
+
+    thermostat.reset();
+    $( '#Thermostat').text(thermostat.temperature);
+
+  });
+
+  // $( "#power-saving-status" ).click(function( event ) {
+
+  //   $( '#power-saving-status').text(thermostat.powerSaverStatus());
+
+  // });
+
+  $( "#powerSaverSwitch" ).click(function( event ) {
+
+    thermostat.powerSaverSwitch();
+
+    $( '#power-saving-status').text(thermostat.powerSaverStatus());
 
   });
 

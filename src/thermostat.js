@@ -39,3 +39,8 @@ Thermostat.prototype.usage = function(){
   }
   return 'high-usage'
 };
+
+Thermostat.prototype.powerSaverStatus = function() {
+  if (this.powerSaverMode) return "on"
+  return "off"
+};
