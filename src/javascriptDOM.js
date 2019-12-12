@@ -26,17 +26,13 @@ $( document ).ready(function() {
 
   });
 
-  // $( "#power-saving-status" ).click(function( event ) {
-
-  //   $( '#power-saving-status').text(thermostat.powerSaverStatus());
-
-  // });
-
   $( "#powerSaverSwitch" ).click(function( event ) {
 
     thermostat.powerSaverSwitch();
 
     $( '#power-saving-status').text(thermostat.powerSaverStatus());
+
+    $( '#Thermostat').text(thermostat.temperature);
 
   });
 

@@ -46,6 +46,19 @@ describe("Thermostat", function() {
         thermostat.up();
       }).toThrowError('Temperature already at maximum');
     });
+
+    it('puts the temperature back down to the maximum if over it', function(){
+      let thermostat = new Thermostat
+      thermostat.powerSaverSwitch()
+
+      var i
+      for(i = 0; i < 10; i++) {
+        thermostat.up()
+      };
+
+      thermostat.powerSaverSwitch()
+      expect(thermostat.temperature).toEqual(25)
+    });
   });
 
   describe('power saver mode off', function(){
@@ -65,6 +78,7 @@ describe("Thermostat", function() {
         thermostat.up();
       }).toThrowError('Temperature already at maximum');
     });
+
   });
 
   it('can reset the temperature to 20', function(){
