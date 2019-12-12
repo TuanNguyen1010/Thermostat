@@ -19,19 +19,7 @@
     </section>
     <script src="src/jquery.js"></script>
     <script src="src/thermostat.js"></script>
-    <script>
-    $( document ).ready(function() {
-        var thermostat = new Thermostat();
-        $( '#Thermostat').text(thermostat.temperature);
-        $( "#up" ).click(function( event ) {
-
-            thermostat.up();
-            $( '#Thermostat').text(thermostat.temperature);
-
-         });
-
-});
-</script>
+    <script src="src/javascriptDOM.js"></script>
 </body>
 
 </html>
