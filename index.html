@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<head> 
+<head>
     <link rel="stylesheet" type="text/css" href="css/theme.css">
     <title>Thermostat </title>
 </head>
@@ -9,7 +9,7 @@
 
 <body>
         <h1 id="Thermostat">20</h1>
-    <section> 
+    <section>
         <p>
             <button id="up">+</button><br>
             <button id="down">-</button><br>
@@ -20,22 +20,25 @@
     </section>
 
     <section>
-        <h1>Temperature in <span id ="selected-city"></span>London</span> right now: <span id="current-temperature"></span>°C</h1>
-        <div class="dropdown">
+        <h1>Temperature in <span id="selected-city">London</span> right now: <span id="current-temperature"></span>°C</h1>
+        <!-- <div class="dropdown">
             <button class="dropbtn">city </button>
-            <div class="dropdown-content">
-              <option value='London,UK'></option>London, UK</option>
-              <option value='Toronto, Canada'>Toronto, Canada</option>
-              <option value='New York, USA'>New York, USA</option>
-            </div>
-          </div>
+            <div class="dropdown-content"> -->
+            <select id="city">
+              <option value='London,UK'>London, UK</option>
+              <option value='Toronto,Canada'>Toronto, Canada</option>
+              <option value='NewYork,USA'>New York, USA</option>
+            </select>
+            <!-- </div>
+          </div> -->
 
       </section>
 
     <script src="src/jquery.js"></script>
     <script src="src/thermostat.js"></script>
-    <script src="src/javascriptDOM.js"></script>
     <script src ="src/ajax.js"> </script>
+    <script src="src/javascriptDOM.js"></script>
+
 </body>
 
 </html>

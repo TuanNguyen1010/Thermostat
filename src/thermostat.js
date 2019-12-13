@@ -2,6 +2,15 @@
 
 const MIN_TEMP =10
 
+var city = "london,uk"
+
+function weatherSelector(city = 'london,uk'){
+  city = $("#city").val();
+  $.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=357a681114dd79d8efab624598eb3c09&units=metric`, function(data){
+      $('#current-temperature').text(data.main.temp);
+  });
+};
+
 function Thermostat(temperature = 20) {
   this.temperature = temperature;
   this.powerSaverMode = true
@@ -46,3 +55,7 @@ Thermostat.prototype.powerSaverStatus = function() {
   if (this.powerSaverMode) return "on"
   return "off"
 };
+
+
+
+weatherSelector(city);
